@@ -27,12 +27,10 @@ class OnboardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupUi()
-        setupObservables()
     }
 
     private fun setupUi() {
         setupViewPager()
-
     }
 
     private fun setupViewPager() {
@@ -48,10 +46,6 @@ class OnboardingFragment : Fragment() {
         )
 
         binding.viewpagerOnboarding.adapter = viewPagerAdapter
-    }
-
-    private fun setupObservables() {
-
     }
 
     override fun onDestroyView() {

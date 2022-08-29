@@ -3,11 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/onboardingFragment">
+    app:startDestination="@id/fixturesFragment">
 
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.example.footballsimulator.onboarding.OnboardingFragment"
         android:label="OnboardingFragment"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/navigate_from_onboarding_to_fixtures"
+            app:destination="@id/fixturesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fixturesFragment"
+        android:name="com.example.footballsimulator.fixtures.FixturesFragment"
+        android:label="FixturesFragment"
+        tools:layout="@layout/fragment_fixtures" >
+        <action
+            android:id="@+id/navigate_from_fixtures_to_onboarding"
+            app:destination="@id/onboardingFragment" />
+    </fragment>
 </navigation>
