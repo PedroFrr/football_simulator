@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FootballSimulator</string>
+    <string name="onboarding_first_screen_information">mock text</string>
+    <string name="onboarding_second_screen_information">treter</string>
 </resources>
