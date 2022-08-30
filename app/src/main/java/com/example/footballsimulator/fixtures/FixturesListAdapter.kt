@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.footballsimulator.common.util.hide
 import com.example.footballsimulator.databinding.ItemFixtureBinding
 import com.example.footballsimulator.databinding.ItemRoundBinding
 import com.example.footballsimulator.fixtures.domain.Fixture
@@ -75,9 +76,9 @@ class FixturesListAdapter : ListAdapter<FixtureDataItem, RecyclerView.ViewHolder
         fun bind(fixture: Fixture) {
             binding.apply {
                 tvHomeTeamName.text = fixture.homeTeam.name
-                tvHomeTeamScore.text = fixture.homeTeamScore.toString()
+                fixture.homeTeamScore?.let { tvHomeTeamScore.text = it.toString() } ?: tvHomeTeamScore.hide()
                 tvAwayTeamName.text = fixture.awayTeam.name
-                tvAwayTeamScore.text = fixture.awayTeamScore.toString()
+                fixture.awayTeamScore?.let { tvAwayTeamScore.text = it.toString() } ?: tvAwayTeamScore.hide()
             }
         }
     }

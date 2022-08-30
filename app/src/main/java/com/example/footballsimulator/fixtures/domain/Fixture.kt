@@ -8,6 +8,6 @@ data class Fixture(
     val date: String,
     val homeTeam: Team,
     val awayTeam: Team,
-    val homeTeamScore: Int,
-    val awayTeamScore: Int
+    val homeTeamScore: Int?,
+    val awayTeamScore: Int?
 )

@@ -24,8 +24,8 @@ class StandingsViewModel @Inject constructor() : ViewModel() {
 }
 
 val mockTeamStandings = listOf(
-    TeamStanding(1, Team(name = "Team1")),
-    TeamStanding(2, Team(name = "Team2")),
-    TeamStanding(3, Team(name = "Team3")),
-    TeamStanding(4, Team(name = "Team4")),
+    TeamStanding(1, Team(teamId = "SS" , name = "Team1")),
+    TeamStanding(2, Team(teamId = "NS" , name = "Team2")),
+    TeamStanding(3, Team(teamId = "SdS" , name = "Team3")),
+    TeamStanding(4, Team(teamId = "SsS" , name = "Team4")),
 )

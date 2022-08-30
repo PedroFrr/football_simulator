@@ -5,7 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.footballsimulator.common.data.db.entities.DbPlayer
-import com.example.footballsimulator.common.data.db.entities.DbTeam
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PlayersDao {
@@ -15,9 +15,9 @@ interface PlayersDao {
 
     @Query(
         "SELECT * FROM players_table" +
-                " JOIN teams_table ON teams_table.teamId == players_table.teamId"
+                " WHERE teamId == :teamId"
     )
-    suspend fun getTeamPlayers(): Map<DbTeam, List<DbPlayer>>
+    fun getTeamPlayers(teamId: String): Flow<List<DbPlayer>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(fixtures: List<DbPlayer>)
