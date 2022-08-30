@@ -3,6 +3,8 @@ package com.example.footballsimulator
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
@@ -18,11 +20,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         setupBottomNavMenu(navController)
+        setupBottomNavMenuVisibility()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -31,5 +35,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNavMenu(navController: NavController) {
         binding.bottomNav.setupWithNavController(navController)
+    }
+
+    private fun setupBottomNavMenuVisibility() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.bottomNav.isVisible = destination.id != R.id.onboardingFragment
+        }
     }
 }

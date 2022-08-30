@@ -11,8 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballsimulator.databinding.FragmentPlayersBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class PlayersFragment : Fragment() {
     private var _binding: FragmentPlayersBinding? = null
     private val binding get() = _binding!!

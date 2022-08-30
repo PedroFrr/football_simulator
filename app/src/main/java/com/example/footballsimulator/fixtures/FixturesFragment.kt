@@ -42,7 +42,6 @@ class FixturesFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 fixturesViewModel.uiState.collect { uiState ->
-
                     if (uiState.onboardingStatus == FixturesUiState.OnboardingStatus.ONBOARDING_REQUIRED) {
                         findNavController().navigate(R.id.navigate_from_fixtures_to_onboarding)
                     }

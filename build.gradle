@@ -20,6 +20,7 @@ buildscript {
         workVersion = '2.5.0'
         moshiRetrofitVersion = '2.9.0'
         navVersion = '2.5.1'
+        splashscreenVersion = '1.0.0'
     }
     repositories {
         google()

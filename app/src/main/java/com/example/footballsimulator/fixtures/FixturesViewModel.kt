@@ -23,11 +23,7 @@ class FixturesViewModel @Inject constructor(
         // if the user didn't see the onboarding screen yet, redirect him
         viewModelScope.launch {
             applicationPreferences.isOnboarded.collect { hasCheckedOnboarding ->
-                if (hasCheckedOnboarding) {
-                    _uiState.update {
-                        it.copy(onboardingStatus = FixturesUiState.OnboardingStatus.ONBOARDING_DONE)
-                    }
-                } else {
+                if (!hasCheckedOnboarding) {
                     _uiState.update {
                         it.copy(onboardingStatus = FixturesUiState.OnboardingStatus.ONBOARDING_REQUIRED)
                     }

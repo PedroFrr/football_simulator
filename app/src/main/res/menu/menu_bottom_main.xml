@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/fixtureList"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_fixtures" />
+    <item
         android:id="@+id/teamStandingList"
         android:icon="@drawable/ic_football_ball"
         android:title="@string/title_standings" />
