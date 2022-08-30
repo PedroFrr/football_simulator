@@ -54,7 +54,7 @@ class FixturesDatabaseWorker @AssistedInject constructor(
         teams.removeAt(0)
         val teamsSize: Int = teams.size
         for (day in 0 until numDays) {
-            println("Day ${day + 1}")
+            tournamentStartDate = tournamentStartDate.plusDays(1)
             val teamIdx = day % teamsSize
             fixtures.add(
                 DbFixture(
@@ -78,23 +78,24 @@ class FixturesDatabaseWorker @AssistedInject constructor(
                     )
                 )
             }
-
-            tournamentStartDate = tournamentStartDate.plusDays(1)
         }
 
+        var secondRoundStartDate = tournamentStartDate.plusWeeks(2) // second round starts two weeks after
+
         //Now for next round, Rotate team Array
-        val secondRound = fixtures.map {
-            tournamentStartDate = tournamentStartDate.plusDays(1)
+        val secondRound = fixtures.mapIndexed { index, dbFixture ->
+            if (index % 2 == 0) secondRoundStartDate = secondRoundStartDate.plusDays(1)
             DbFixture(
                 date = tournamentStartDate.formatToPattern(YYYY_MM_DD),
-                homeTeamId = it.awayTeamId,
+                homeTeamId = dbFixture.awayTeamId,
                 homeTeamScore = null,
-                awayTeamId = it.homeTeamId,
+                awayTeamId = dbFixture.homeTeamId,
                 awayTeamScore = null,
             )
         }
 
         fixtures.addAll(secondRound)
+
         return fixtures
     }
 }

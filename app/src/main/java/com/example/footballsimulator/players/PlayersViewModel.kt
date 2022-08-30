@@ -31,7 +31,5 @@ class PlayersViewModel @Inject constructor(
                 }
             }
         }
-
-
     }
 }

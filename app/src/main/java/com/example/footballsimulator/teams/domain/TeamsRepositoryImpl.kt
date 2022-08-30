@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class TeamsRepositoryImpl @Inject constructor(
     private val teamsDao: TeamsDao
 ) : TeamsRepository {
-    override fun getTeams(): Flow<List<Team>> = teamsDao.fetchTeams().map {
+    override fun getTeams(): Flow<List<Team>> = teamsDao.fetchTeamsStream().map {
         it.map {
             Team(
                 teamId = it.teamId,
