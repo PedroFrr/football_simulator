@@ -30,6 +30,18 @@ class StandingsRepositoryImpl @Inject constructor(
                     if (it.homeTeamId == team.teamId) it.awayTeamScore ?: 0 else it.homeTeamScore ?: 0
                 }
 
+                val points = teamFixtures.sumOf {
+                    val point = when {
+                        (it.homeTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 3
+                        (it.homeTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 0
+                        (it.awayTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 3
+                        (it.awayTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 0
+                        else -> 1
+                    }
+
+                    point
+                }
+
                 TeamStanding(
                     standingPosition = 0,
                     goalsScored = goalsScored,
@@ -38,6 +50,7 @@ class StandingsRepositoryImpl @Inject constructor(
                         teamId = team.teamId,
                         name = team.name,
                     ),
+                    points = points
                 )
             })
         }
