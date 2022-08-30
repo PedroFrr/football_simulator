@@ -1,7 +1,5 @@
 package com.example.footballsimulator.fixtures.domain
 
-import java.util.UUID
-
 sealed class FixtureDataItem {
     abstract val id: String
 
@@ -10,7 +8,6 @@ sealed class FixtureDataItem {
     }
 
     data class RoundItem(val round: String) : FixtureDataItem() {
-        override val id = UUID.randomUUID().toString()
+        override val id = round
     }
 }
-

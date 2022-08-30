@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.example.footballsimulator.common.data.db.dao.CompetitionsDao
 import com.example.footballsimulator.common.data.db.dao.FixturesDao
 import com.example.footballsimulator.common.data.db.dao.PlayersDao
@@ -39,15 +41,18 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // TODO prepopulate data
+        /*
+        Prepopulates database with a first set of fixtures for all rounds
+         */
         private fun buildDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
                 .addCallback(
                     object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
-//                            val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
-//                            WorkManager.getInstance(context).enqueue(request)
+                            //TODO insert teams and chain work requests (1st players, 2nd teams, 3rd fixtures)
+                            val request = OneTimeWorkRequestBuilder<FixturesDatabaseWorker>().build()
+                            WorkManager.getInstance(context).enqueue(request)
                         }
                     }
                 )

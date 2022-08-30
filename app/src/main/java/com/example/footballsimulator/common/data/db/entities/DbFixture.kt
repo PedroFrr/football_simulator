@@ -7,5 +7,9 @@ import java.util.UUID
 @Entity(tableName = "fixtures_table")
 data class DbFixture(
     @PrimaryKey val fixtureId: String = UUID.randomUUID().toString(),
-    val name: String
+    val date: String,
+    val awayTeamId: String,
+    val homeTeamId: String,
+    val homeTeamScore: Int?,
+    val awayTeamScore: Int?,
 )

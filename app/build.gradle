@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.footballsimulator"
-        minSdk 21
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -69,6 +69,8 @@ dependencies {
     //Hilt
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
@@ -87,6 +89,9 @@ dependencies {
 
     //Splash screen
     implementation "androidx.core:core-splashscreen:$rootProject.splashscreenVersion"
+
+    //WorkManager
+    implementation "androidx.work:work-runtime-ktx:$workVersion"
 
     //Test dependencies
     testImplementation 'junit:junit:4.13.2'
