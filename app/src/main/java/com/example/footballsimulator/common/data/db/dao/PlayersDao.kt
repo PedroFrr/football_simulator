@@ -13,8 +13,7 @@ interface PlayersDao {
 
     @Query(
         "SELECT * FROM players_table" +
-                " JOIN teams_table ON teams_table.teamId == players_table.teamId"
+            " JOIN teams_table ON teams_table.teamId == players_table.teamId"
     )
     suspend fun getTeamPlayers(): Map<DbTeam, List<DbPlayer>>
-
 }

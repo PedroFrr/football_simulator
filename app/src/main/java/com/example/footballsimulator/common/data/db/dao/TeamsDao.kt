@@ -9,5 +9,4 @@ interface TeamsDao {
 
     @Query("SELECT * FROM teams_table")
     suspend fun fetchTeams(): List<DbTeam>
-
 }

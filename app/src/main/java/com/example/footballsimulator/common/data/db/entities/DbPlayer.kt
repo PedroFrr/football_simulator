@@ -2,7 +2,7 @@ package com.example.footballsimulator.common.data.db.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
+import java.util.UUID
 
 @Entity(tableName = "players_table")
 data class DbPlayer(
@@ -12,5 +12,5 @@ data class DbPlayer(
     val offense: Int,
     val defence: Int,
     val agility: Int,
-    //TODO add other attributes if needed
+    // TODO add other attributes if needed
 )

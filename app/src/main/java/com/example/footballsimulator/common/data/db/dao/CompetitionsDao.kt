@@ -9,5 +9,4 @@ interface CompetitionsDao {
 
     @Query("SELECT * FROM competitions_table")
     suspend fun fetchCompetitions(): List<DbCompetition>
-
 }
