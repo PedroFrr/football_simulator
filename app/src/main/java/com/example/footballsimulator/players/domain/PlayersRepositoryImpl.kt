@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class PlayersRepositoryImpl @Inject constructor(
     private val playersDao: PlayersDao
 ) : PlayersRepository {
-    override fun getTeamPlayers(teamId: String): Flow<List<Player>> = playersDao.getTeamPlayers(teamId).map {
+    override fun getTeamPlayers(teamId: String): Flow<List<Player>> = playersDao.getTeamPlayersStream(teamId).map {
         it.map {
             Player(
                 playerId = it.playerId,

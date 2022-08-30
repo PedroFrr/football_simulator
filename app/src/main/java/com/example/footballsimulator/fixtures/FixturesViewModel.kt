@@ -11,12 +11,13 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class FixturesViewModel @Inject constructor(
     applicationPreferences: ApplicationPreferences,
-    fixturesRepository: FixturesRepository
+    private val fixturesRepository: FixturesRepository
 ) : ViewModel() {
 
     private val onboardingStatusStream: Flow<Boolean> = applicationPreferences.isOnboarded
@@ -42,4 +43,10 @@ class FixturesViewModel @Inject constructor(
             started = SharingStarted.WhileSubscribed(5_000),
             initialValue = FixturesUiState()
         )
+
+    fun onSimulateScheduleClicked() {
+        viewModelScope.launch {
+            fixturesRepository.simulateMatches()
+        }
+    }
 }

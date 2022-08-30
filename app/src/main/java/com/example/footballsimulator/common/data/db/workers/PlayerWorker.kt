@@ -10,5 +10,6 @@ data class PlayerWorker(
     @Json(name = "last_name") val lastName: String,
     @Json(name = "team") val team: String,
     @Json(name = "position") val position: String,
-    @Json(name = "image") val image: String
+    @Json(name = "image") val image: String,
+    @Json(name = "overall") val overallRating: Double,
 )

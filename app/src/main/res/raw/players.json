@@ -5,7 +5,8 @@
     "last_name": "Bellerin",
     "team": "Arsenal",
     "position": "Defender",
-    "image": "hectorbellerin.jpg"
+    "image": "hectorbellerin.jpg",
+    "overall": 6.83
   },
   {
     "identifier": 1101,
@@ -13,7 +14,8 @@
     "last_name": "Cech",
     "team": "Arsenal",
     "position": "Goalkeeper",
-    "image": "petrcech.jpg"
+    "image": "petrcech.jpg",
+    "overall": 6.66
   },
   {
     "identifier": 1402,
@@ -21,7 +23,8 @@
     "last_name": "Giroud",
     "team": "Arsenal",
     "position": "Striker",
-    "image": "oliviergiroud.jpg"
+    "image": "oliviergiroud.jpg",
+    "overall": 6.62
   },
   {
     "identifier": 1027,
@@ -29,7 +32,8 @@
     "last_name": "Iwobi",
     "team": "Arsenal",
     "position": "Midfielder 2",
-    "image": "alexiwobi.jpg"
+    "image": "alexiwobi.jpg",
+    "overall": 7.41
   },
   {
     "identifier": 1009,
@@ -37,7 +41,8 @@
     "last_name": "Koscielny",
     "team": "Arsenal",
     "position": "Defender",
-    "image": "laurentkoscielny.jpg"
+    "image": "laurentkoscielny.jpg",
+    "overall": 5.3
   },
   {
     "identifier": 1033,
@@ -45,7 +50,8 @@
     "last_name": "Ozil",
     "team": "Arsenal",
     "position": "Midfielder 1",
-    "image": "mesutozil.jpg"
+    "image": "mesutozil.jpg",
+    "overall": 6.08
   },
   {
     "identifier": 1048,
@@ -53,7 +59,8 @@
     "last_name": "Sanchez",
     "team": "Arsenal",
     "position": "Striker",
-    "image": "alexissanchez.jpg"
+    "image": "alexissanchez.jpg",
+    "overall": 7.42
   },
   {
     "identifier": 1041,
@@ -61,7 +68,8 @@
     "last_name": "Walcott",
     "team": "Arsenal",
     "position": "Midfielder 2",
-    "image": "theowalcott.jpg"
+    "image": "theowalcott.jpg",
+    "overall": 6.36
   },
   {
     "identifier": 1404,
@@ -69,7 +77,8 @@
     "last_name": "Alonso",
     "team": "Chelsea",
     "position": "Defender",
-    "image": "marcosalonso.jpg"
+    "image": "marcosalonso.jpg",
+    "overall": 7.41
   },
   {
     "identifier": 1201,
@@ -77,7 +86,8 @@
     "last_name": "Azpilicueta",
     "team": "Chelsea",
     "position": "Defender",
-    "image": "cesarazpilicueta.jpg"
+    "image": "cesarazpilicueta.jpg",
+    "overall": 6.96
   },
   {
     "identifier": 1304,
@@ -85,7 +95,8 @@
     "last_name": "Cahill",
     "team": "Chelsea",
     "position": "Defender",
-    "image": "garycahill.jpg"
+    "image": "garycahill.jpg",
+    "overall": 5.2
   },
   {
     "identifier": 1043,
@@ -93,7 +104,8 @@
     "last_name": "Costa",
     "team": "Chelsea",
     "position": "Striker",
-    "image": "diegocosta.jpg"
+    "image": "diegocosta.jpg",
+    "overall": 5.6
   },
   {
     "identifier": 1016,
@@ -101,7 +113,8 @@
     "last_name": "Courtois",
     "team": "Chelsea",
     "position": "Goalkeeper",
-    "image": "thibautcourtois.jpg"
+    "image": "thibautcourtois.jpg",
+    "overall": 7.18
   },
   {
     "identifier": 1026,
@@ -109,7 +122,8 @@
     "last_name": "Hazard",
     "team": "Chelsea",
     "position": "Midfielder 1",
-    "image": "edenhazard.jpg"
+    "image": "edenhazard.jpg",
+    "overall": 6.84
   },
   {
     "identifier": 1104,
@@ -117,7 +131,8 @@
     "last_name": "Matic",
     "team": "Chelsea",
     "position": "Midfielder 2",
-    "image": "nemanjamatic.jpg"
+    "image": "nemanjamatic.jpg",
+    "overall": 6.84
   },
   {
     "identifier": 1032,
@@ -125,7 +140,8 @@
     "last_name": "Moses",
     "team": "Chelsea",
     "position": "Midfielder 2",
-    "image": "victormoses.jpg"
+    "image": "victormoses.jpg",
+    "overall": 7.04
   },
   {
     "identifier": 1103,
@@ -133,7 +149,8 @@
     "last_name": "Benteke",
     "team": "Crystal Palace",
     "position": "Striker",
-    "image": "christianbenteke.jpg"
+    "image": "christianbenteke.jpg",
+    "overall": 5.05
   },
   {
     "identifier": 1038,
@@ -141,7 +158,8 @@
     "last_name": "Amartey",
     "team": "Leicester",
     "position": "Midfielder 2",
-    "image": "danielamartey.jpg"
+    "image": "danielamartey.jpg",
+    "overall": 6.79
   },
   {
     "identifier": 1007,
@@ -149,7 +167,8 @@
     "last_name": "Huth",
     "team": "Leicester",
     "position": "Defender",
-    "image": "roberthuth.jpg"
+    "image": "roberthuth.jpg",
+    "overall": 6.98
   },
   {
     "identifier": 1029,
@@ -157,7 +176,8 @@
     "last_name": "Mahrez",
     "team": "Leicester",
     "position": "Midfielder 2",
-    "image": "riyadmahrez.jpg"
+    "image": "riyadmahrez.jpg",
+    "overall": 7.6
   },
   {
     "identifier": 1012,
@@ -165,7 +185,8 @@
     "last_name": "Morgan",
     "team": "Leicester",
     "position": "Defender",
-    "image": "wesmorgan.jpg"
+    "image": "wesmorgan.jpg",
+    "overall": 5.6
   },
   {
     "identifier": 2306,
@@ -173,7 +194,8 @@
     "last_name": "Schmeichel",
     "team": "Leicester",
     "position": "Goalkeeper",
-    "image": "kasperschmeichel.jpg"
+    "image": "kasperschmeichel.jpg",
+    "overall": 7.1
   },
   {
     "identifier": 1049,
@@ -181,7 +203,8 @@
     "last_name": "Slimani",
     "team": "Leicester",
     "position": "Striker",
-    "image": "islamslimani.jpg"
+    "image": "islamslimani.jpg",
+    "overall": 6.03
   },
   {
     "identifier": 1302,
@@ -189,7 +212,8 @@
     "last_name": "Vardy",
     "team": "Leicester",
     "position": "Striker",
-    "image": "jamievardy.jpg"
+    "image": "jamievardy.jpg",
+    "overall": 7.6
   },
   {
     "identifier": 1042,
@@ -197,7 +221,8 @@
     "last_name": "Aguero",
     "team": "Manchester City",
     "position": "Striker",
-    "image": "sergioaguero.jpg"
+    "image": "sergioaguero.jpg",
+    "overall": 8.01
   },
   {
     "identifier": 1015,
@@ -205,7 +230,8 @@
     "last_name": "Bravo",
     "team": "Manchester City",
     "position": "Goalkeeper",
-    "image": "claudiobravo.jpg"
+    "image": "claudiobravo.jpg",
+    "overall": 5.83
   },
   {
     "identifier": 1703,
@@ -213,7 +239,8 @@
     "last_name": "Clichy",
     "team": "Manchester City",
     "position": "Defender",
-    "image": "gaelclichy.jpg"
+    "image": "gaelclichy.jpg",
+    "overall": 5.62
   },
   {
     "identifier": 1203,
@@ -221,7 +248,8 @@
     "last_name": "De Bruyne",
     "team": "Manchester City",
     "position": "Midfielder 2",
-    "image": "kevindebruyne.jpg"
+    "image": "kevindebruyne.jpg",
+    "overall": 8.5
   },
   {
     "identifier": 1045,
@@ -229,7 +257,8 @@
     "last_name": "Iheanacho",
     "team": "Manchester City",
     "position": "Striker",
-    "image": "kelechiiheanacho.jpg"
+    "image": "kelechiiheanacho.jpg",
+    "overall": 6.12
   },
   {
     "identifier": 2200,
@@ -237,7 +266,8 @@
     "last_name": "Jesus",
     "team": "Manchester City",
     "position": "Striker",
-    "image": "gabrieljesus.jpg"
+    "image": "gabrieljesus.jpg",
+    "overall": 7.03
   },
   {
     "identifier": 1008,
@@ -245,7 +275,8 @@
     "last_name": "Kolarov",
     "team": "Manchester City",
     "position": "Defender",
-    "image": "aleksandarkolarov.jpg"
+    "image": "aleksandarkolarov.jpg",
+    "overall": 5.01
   },
   {
     "identifier": 2201,
@@ -253,7 +284,8 @@
     "last_name": "Sane",
     "team": "Manchester City",
     "position": "Midfielder 1",
-    "image": "leroysane.jpg"
+    "image": "leroysane.jpg",
+    "overall": 8.0
   },
   {
     "identifier": 1040,
@@ -261,7 +293,8 @@
     "last_name": "Silva",
     "team": "Manchester City",
     "position": "Midfielder 1",
-    "image": "davidsilva.jpg"
+    "image": "davidsilva.jpg",
+    "overall": 8.1
   },
   {
     "identifier": 1036,
@@ -269,7 +302,8 @@
     "last_name": "Sterling",
     "team": "Manchester City",
     "position": "Midfielder 2",
-    "image": "raheemsterling.jpg"
+    "image": "raheemsterling.jpg",
+    "overall": 7.6
   },
   {
     "identifier": 1500,
@@ -277,7 +311,8 @@
     "last_name": "Toure",
     "team": "Manchester City",
     "position": "Midfielder 1",
-    "image": "yayatoure.jpg"
+    "image": "yayatoure.jpg",
+    "overall": 5.6
   },
   {
     "identifier": 1001,
@@ -285,7 +320,8 @@
     "last_name": "Bailly",
     "team": "Manchester United",
     "position": "Defender",
-    "image": "ericbailly.jpg"
+    "image": "ericbailly.jpg",
+    "overall": 5.5
   },
   {
     "identifier": 1017,
@@ -293,7 +329,8 @@
     "last_name": "De Gea",
     "team": "Manchester United",
     "position": "Goalkeeper",
-    "image": "daviddegea.jpg"
+    "image": "daviddegea.jpg",
+    "overall": 6.7
   },
   {
     "identifier": 1706,
@@ -301,7 +338,8 @@
     "last_name": "Herrera",
     "team": "Manchester United",
     "position": "Midfielder 1",
-    "image": "anderherrera.jpg"
+    "image": "anderherrera.jpg",
+    "overall": 5.06
   },
   {
     "identifier": 1044,
@@ -309,7 +347,8 @@
     "last_name": "Ibrahimovic",
     "team": "Manchester United",
     "position": "Striker",
-    "image": "zlatanibrahimovic.jpg"
+    "image": "zlatanibrahimovic.jpg",
+    "overall": 7.15
   },
   {
     "identifier": 1705,
@@ -317,7 +356,8 @@
     "last_name": "Jones",
     "team": "Manchester United",
     "position": "Defender",
-    "image": "philjones.jpg"
+    "image": "philjones.jpg",
+    "overall": 6.25
   },
   {
     "identifier": 1031,
@@ -325,7 +365,8 @@
     "last_name": "Mata",
     "team": "Manchester United",
     "position": "Midfielder 1",
-    "image": "juanmata.jpg"
+    "image": "juanmata.jpg",
+    "overall": 7.18
   },
   {
     "identifier": 2202,
@@ -333,7 +374,8 @@
     "last_name": "Mkhitaryan",
     "team": "Manchester United",
     "position": "Midfielder 2",
-    "image": "henrikhmkhitaryan.jpg"
+    "image": "henrikhmkhitaryan.jpg",
+    "overall": 7.5
   },
   {
     "identifier": 1034,
@@ -341,7 +383,8 @@
     "last_name": "Pogba",
     "team": "Manchester United",
     "position": "Midfielder 2",
-    "image": "paulpogba.jpg"
+    "image": "paulpogba.jpg",
+    "overall": 7.9
   },
   {
     "identifier": 1204,
@@ -349,7 +392,8 @@
     "last_name": "Rashford",
     "team": "Manchester United",
     "position": "Striker",
-    "image": "marcusrashford.jpg"
+    "image": "marcusrashford.jpg",
+    "overall": 7.8
   },
   {
     "identifier": 1704,
@@ -357,7 +401,8 @@
     "last_name": "Valencia",
     "team": "Manchester United",
     "position": "Defender",
-    "image": "antoniovalencia.jpg"
+    "image": "antoniovalencia.jpg",
+    "overall": 6.7
   },
   {
     "identifier": 1709,
@@ -365,7 +410,8 @@
     "last_name": "Allen",
     "team": "Stoke",
     "position": "Midfielder 1",
-    "image": "joeallen.jpg"
+    "image": "joeallen.jpg",
+    "overall": 4.8
   },
   {
     "identifier": 2001,
@@ -373,7 +419,8 @@
     "last_name": "Arnautovic",
     "team": "Stoke",
     "position": "Midfielder 2",
-    "image": "markoarnautovic.jpg"
+    "image": "markoarnautovic.jpg",
+    "overall": 6.2
   },
   {
     "identifier": 2002,
@@ -381,7 +428,8 @@
     "last_name": "Crouch",
     "team": "Stoke",
     "position": "Striker",
-    "image": "petercrouch.jpg"
+    "image": "petercrouch.jpg",
+    "overall": 4.6
   },
   {
     "identifier": 2307,
@@ -389,7 +437,8 @@
     "last_name": "Pieters",
     "team": "Stoke",
     "position": "Defender",
-    "image": "erikpieters.jpg"
+    "image": "erikpieters.jpg",
+    "overall": 6
   },
   {
     "identifier": 2308,
@@ -397,7 +446,8 @@
     "last_name": "Shawcross",
     "team": "Stoke",
     "position": "Defender",
-    "image": "ryanshawcross.jpg"
+    "image": "ryanshawcross.jpg",
+    "overall": 5.9
   },
   {
     "identifier": 1000,
@@ -405,7 +455,8 @@
     "last_name": "Alderweireld",
     "team": "Tottenham",
     "position": "Defender",
-    "image": "tobyalderweireld.jpg"
+    "image": "tobyalderweireld.jpg",
+    "overall": 6.83
   },
   {
     "identifier": 1401,
@@ -413,7 +464,8 @@
     "last_name": "Alli",
     "team": "Tottenham",
     "position": "Midfielder 1",
-    "image": "delealli.jpg"
+    "image": "delealli.jpg",
+    "overall": 6.0
   },
   {
     "identifier": 2310,
@@ -421,7 +473,8 @@
     "last_name": "Dier",
     "team": "Tottenham",
     "position": "Midfielder 2",
-    "image": "ericdier.jpg"
+    "image": "ericdier.jpg",
+    "overall": 7.6
   },
   {
     "identifier": 1208,
@@ -429,7 +482,8 @@
     "last_name": "Eriksen",
     "team": "Tottenham",
     "position": "Midfielder 2",
-    "image": "christianeriksen.jpg"
+    "image": "christianeriksen.jpg",
+    "overall": 8.05
   },
   {
     "identifier": 1209,
@@ -437,7 +491,8 @@
     "last_name": "Kane",
     "team": "Tottenham",
     "position": "Striker",
-    "image": "harrykane.jpg"
+    "image": "harrykane.jpg",
+    "overall": 8.4
   },
   {
     "identifier": 1018,
@@ -445,7 +500,8 @@
     "last_name": "Lloris",
     "team": "Tottenham",
     "position": "Goalkeeper",
-    "image": "hugolloris.jpg"
+    "image": "hugolloris.jpg",
+    "overall": 7.7
   },
   {
     "identifier": 1035,
@@ -453,7 +509,8 @@
     "last_name": "Son",
     "team": "Tottenham",
     "position": "Midfielder 1",
-    "image": "heung-minson.jpg"
+    "image": "heung-minson.jpg",
+    "overall": 8.3
   },
   {
     "identifier": 1014,
@@ -461,7 +518,8 @@
     "last_name": "Walker",
     "team": "Tottenham",
     "position": "Defender",
-    "image": "kylewalker.jpg"
+    "image": "kylewalker.jpg",
+    "overall": 7.5
   },
   {
     "identifier": 1037,
@@ -469,7 +527,8 @@
     "last_name": "Wanyama",
     "team": "Tottenham",
     "position": "Midfielder 1",
-    "image": "victorwanyama.jpg"
+    "image": "victorwanyama.jpg",
+    "overall": 5.2
   },
   {
     "identifier": 1021,
@@ -477,7 +536,8 @@
     "last_name": "Chadli",
     "team": "West Brom",
     "position": "Midfielder 2",
-    "image": "nacerchadli.jpg"
+    "image": "nacerchadli.jpg",
+    "overall": 5.6
   },
   {
     "identifier": 1006,
@@ -485,7 +545,8 @@
     "last_name": "Evans",
     "team": "West Brom",
     "position": "Defender",
-    "image": "jonnyevans.jpg"
+    "image": "jonnyevans.jpg",
+    "overall": 5.7
   },
   {
     "identifier": 2311,
@@ -493,7 +554,8 @@
     "last_name": "Foster",
     "team": "West Brom",
     "position": "Goalkeeper",
-    "image": "benfoster.jpg"
+    "image": "benfoster.jpg",
+    "overall": 6.1
   },
   {
     "identifier": 1011,
@@ -501,7 +563,8 @@
     "last_name": "McAuley",
     "team": "West Brom",
     "position": "Defender",
-    "image": "garethmcauley.jpg"
+    "image": "garethmcauley.jpg",
+    "overall": 5.82
   },
   {
     "identifier": 1707,
@@ -509,7 +572,8 @@
     "last_name": "Phillips",
     "team": "West Brom",
     "position": "Midfielder 1",
-    "image": "mattphillips.jpg"
+    "image": "mattphillips.jpg",
+    "overall": 5.68
   },
   {
     "identifier": 1047,
@@ -517,6 +581,7 @@
     "last_name": "Rondon",
     "team": "West Brom",
     "position": "Striker",
-    "image": "salomonrondon.jpg"
+    "image": "salomonrondon.jpg",
+    "overall": 6.22
   }
 ]

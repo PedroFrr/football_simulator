@@ -1,34 +1,24 @@
 package com.example.footballsimulator.fixtures
 
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.footballsimulator.common.util.MM_DD
+import com.example.footballsimulator.common.util.YYYY_MM_DD
+import com.example.footballsimulator.common.util.formatToPattern
 import com.example.footballsimulator.common.util.hide
 import com.example.footballsimulator.databinding.ItemFixtureBinding
 import com.example.footballsimulator.databinding.ItemRoundBinding
 import com.example.footballsimulator.fixtures.domain.Fixture
 import com.example.footballsimulator.fixtures.domain.FixtureDataItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 private const val ITEM_VIEW_TYPE_ROUND = 0
 private const val ITEM_VIEW_TYPE_FIXTURE = 1
 
 class FixturesListAdapter : ListAdapter<FixtureDataItem, RecyclerView.ViewHolder>(FixtureListCallback()) {
-
-    private val adapterScope = CoroutineScope(Dispatchers.Default)
-
-    fun addFixturesAndRounds(list: List<FixtureDataItem>) {
-        adapterScope.launch {
-            withContext(Dispatchers.Main) {
-                submitList(list)
-            }
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -59,7 +49,7 @@ class FixturesListAdapter : ListAdapter<FixtureDataItem, RecyclerView.ViewHolder
     }
 
     class FixtureViewHolder(
-        private val binding: ItemFixtureBinding
+        private val binding: ItemFixtureBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun from(parent: ViewGroup): FixtureViewHolder {
@@ -76,15 +66,27 @@ class FixturesListAdapter : ListAdapter<FixtureDataItem, RecyclerView.ViewHolder
         fun bind(fixture: Fixture) {
             binding.apply {
                 tvHomeTeamName.text = fixture.homeTeam.name
+
+                // set winning team name to bold
+                val homeTeamTypeFace = if ((fixture.homeTeamScore ?: 0) > (fixture.awayTeamScore ?: 0)) Typeface.BOLD else Typeface.NORMAL
+                val awayTeamTypeFace = if ((fixture.homeTeamScore ?: 0) < (fixture.awayTeamScore ?: 0)) Typeface.BOLD else Typeface.NORMAL
+
+                tvHomeTeamName.setTypeface(tvHomeTeamName.typeface, homeTeamTypeFace)
+                tvHomeTeamScore.setTypeface(tvHomeTeamScore.typeface, homeTeamTypeFace)
+
+                tvAwayTeamName.setTypeface(tvAwayTeamName.typeface, awayTeamTypeFace)
+                tvAwayTeamScore.setTypeface(tvAwayTeamScore.typeface, awayTeamTypeFace)
+
                 fixture.homeTeamScore?.let { tvHomeTeamScore.text = it.toString() } ?: tvHomeTeamScore.hide()
                 tvAwayTeamName.text = fixture.awayTeam.name
                 fixture.awayTeamScore?.let { tvAwayTeamScore.text = it.toString() } ?: tvAwayTeamScore.hide()
+                tvFixtureDate.text = fixture.date.formatToPattern(inputFormat = YYYY_MM_DD, outputFormat = MM_DD)
             }
         }
     }
 
     class RoundViewHolder(
-        private val binding: ItemRoundBinding
+        private val binding: ItemRoundBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun from(parent: ViewGroup): RoundViewHolder {

@@ -34,9 +34,7 @@ class PlayersDatabaseWorker @AssistedInject constructor(
             DbPlayer(
                 teamId = teamId,
                 name = "${it.firstName} ${it.lastName}",
-                offense = 0,
-                defence = 0,
-                agility = 0,
+                overallRating = it.overallRating,
                 position = it.position
             )
         }

@@ -9,9 +9,6 @@ data class DbPlayer(
     @PrimaryKey val playerId: String = UUID.randomUUID().toString(),
     val teamId: String,
     val name: String,
-    val offense: Int,
-    val defence: Int,
-    val agility: Int,
+    val overallRating: Double,
     val position: String
-    // TODO add other attributes if needed
 )

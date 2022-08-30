@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballsimulator.R
 import com.example.footballsimulator.common.util.YYYY_MM_DD
@@ -48,6 +49,10 @@ class FixturesFragment : Fragment() {
 
     private fun setupUi() {
         setupListAdapter()
+
+        binding.btnSimulateFixtures.setOnClickListener {
+            fixturesViewModel.onSimulateScheduleClicked()
+        }
     }
 
     private fun setupObservables() {
@@ -68,6 +73,7 @@ class FixturesFragment : Fragment() {
         binding.rvFixtures.apply {
             adapter = fixtureAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
             hasFixedSize()
         }
     }

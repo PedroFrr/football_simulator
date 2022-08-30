@@ -17,7 +17,13 @@ interface PlayersDao {
         "SELECT * FROM players_table" +
                 " WHERE teamId == :teamId"
     )
-    fun getTeamPlayers(teamId: String): Flow<List<DbPlayer>>
+    fun getTeamPlayersStream(teamId: String): Flow<List<DbPlayer>>
+
+    @Query(
+        "SELECT * FROM players_table" +
+                " WHERE teamId == :teamId"
+    )
+    suspend fun getTeamPlayers(teamId: String): List<DbPlayer>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(fixtures: List<DbPlayer>)

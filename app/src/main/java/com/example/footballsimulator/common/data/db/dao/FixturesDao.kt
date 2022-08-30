@@ -11,8 +11,14 @@ import kotlinx.coroutines.flow.Flow
 interface FixturesDao {
 
     @Query("SELECT * FROM fixtures_table")
-    fun fetchFixtures(): Flow<List<DbFixture>>
+    fun fetchFixturesStream(): Flow<List<DbFixture>>
+
+    @Query("SELECT * FROM fixtures_table")
+    suspend fun fetchFixtures(): List<DbFixture>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(fixtures: List<DbFixture>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun updateFixtures(fixtures: List<DbFixture>)
 }

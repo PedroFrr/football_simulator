@@ -5,4 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface FixturesRepository {
     fun getFixtures(): Flow<List<Fixture>>
+
+    suspend fun simulateMatches()
 }

@@ -14,7 +14,7 @@ interface TeamsDao {
     fun fetchTeamsStream(): Flow<List<DbTeam>>
 
     @Query("SELECT * FROM teams_table")
-    fun fetchTeams(): List<DbTeam>
+    suspend fun fetchTeams(): List<DbTeam>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(teams: List<DbTeam>)

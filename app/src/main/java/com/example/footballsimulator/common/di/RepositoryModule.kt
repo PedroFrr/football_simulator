@@ -4,6 +4,8 @@ import com.example.footballsimulator.fixtures.domain.repository.FixturesReposito
 import com.example.footballsimulator.fixtures.domain.repository.FixturesRepositoryImpl
 import com.example.footballsimulator.players.domain.PlayersRepository
 import com.example.footballsimulator.players.domain.PlayersRepositoryImpl
+import com.example.footballsimulator.standings.domain.StandingsRepository
+import com.example.footballsimulator.standings.domain.StandingsRepositoryImpl
 import com.example.footballsimulator.teams.domain.TeamsRepository
 import com.example.footballsimulator.teams.domain.TeamsRepositoryImpl
 import dagger.Binds
@@ -17,17 +19,21 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun providesFixturesRepository(
-        impl: FixturesRepositoryImpl
+        impl: FixturesRepositoryImpl,
     ): FixturesRepository
 
     @Binds
     abstract fun providesTeamsRepository(
-        impl: TeamsRepositoryImpl
+        impl: TeamsRepositoryImpl,
     ): TeamsRepository
 
     @Binds
     abstract fun providesPlayersRepository(
-        impl: PlayersRepositoryImpl
+        impl: PlayersRepositoryImpl,
     ): PlayersRepository
 
+    @Binds
+    abstract fun providesStandingsRepository(
+        impl: StandingsRepositoryImpl,
+    ): StandingsRepository
 }

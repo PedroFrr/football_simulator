@@ -7,5 +7,7 @@ import java.util.UUID
 @Entity(tableName = "teams_table")
 data class DbTeam(
     @PrimaryKey val teamId: String = UUID.randomUUID().toString(),
-    val name: String
+    val name: String,
+    val numberOfGoalsScoredLastSeason: Int,
+    val numberOfGoalsConcededLastSeason: Int
 )

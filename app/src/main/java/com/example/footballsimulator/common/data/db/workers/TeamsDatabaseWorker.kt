@@ -28,13 +28,13 @@ class TeamsDatabaseWorker @AssistedInject constructor(
  * In the real world this should already come from some API (didn't have the time to implement it here
   */
 private val mockTeams = listOf(
-    DbTeam(name = "Arsenal"),
-    DbTeam(name = "Chelsea"),
-    DbTeam(name = "Crystal Palace"),
-    DbTeam(name = "Leicester"),
-    DbTeam(name = "Manchester City"),
-    DbTeam(name = "Manchester United"),
-    DbTeam(name = "Stoke"),
-    DbTeam(name = "Tottenham"),
-    DbTeam(name = "West Brom"),
+    DbTeam(name = "Arsenal", numberOfGoalsScoredLastSeason = 62, numberOfGoalsConcededLastSeason = 48),
+    DbTeam(name = "Chelsea", numberOfGoalsScoredLastSeason = 76, numberOfGoalsConcededLastSeason = 33),
+    DbTeam(name = "Crystal Palace", numberOfGoalsScoredLastSeason = 50, numberOfGoalsConcededLastSeason = 46),
+    DbTeam(name = "Leicester", numberOfGoalsScoredLastSeason = 62, numberOfGoalsConcededLastSeason = 59),
+    DbTeam(name = "Manchester City", numberOfGoalsScoredLastSeason = 99, numberOfGoalsConcededLastSeason = 26),
+    DbTeam(name = "Manchester United", numberOfGoalsScoredLastSeason = 57, numberOfGoalsConcededLastSeason = 57),
+    DbTeam(name = "Stoke", numberOfGoalsScoredLastSeason = 30, numberOfGoalsConcededLastSeason = 65),
+    DbTeam(name = "Tottenham", numberOfGoalsScoredLastSeason = 69, numberOfGoalsConcededLastSeason = 40),
+    DbTeam(name = "West Brom", numberOfGoalsScoredLastSeason = 23, numberOfGoalsConcededLastSeason = 67),
 )

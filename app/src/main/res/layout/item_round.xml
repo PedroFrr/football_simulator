@@ -9,8 +9,10 @@
         android:id="@+id/tv_round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/title_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         tools:text="Round 1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,7 +86,7 @@ class FixturesDatabaseWorker @AssistedInject constructor(
         val secondRound = fixtures.mapIndexed { index, dbFixture ->
             if (index % 2 == 0) secondRoundStartDate = secondRoundStartDate.plusDays(1)
             DbFixture(
-                date = tournamentStartDate.formatToPattern(YYYY_MM_DD),
+                date = secondRoundStartDate.formatToPattern(YYYY_MM_DD),
                 homeTeamId = dbFixture.awayTeamId,
                 homeTeamScore = null,
                 awayTeamId = dbFixture.homeTeamId,

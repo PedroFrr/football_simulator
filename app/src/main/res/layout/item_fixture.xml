@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/activity_half_vertical_margin">
 
     <TextView
-        android:id="@+id/tv_competition_year"
+        android:id="@+id/tv_fixture_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -15,7 +16,7 @@
         app:layout_constraintHorizontal_weight="0.20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="2021" />
+        tools:text="05.09" />
 
     <TextView
         android:id="@+id/tv_home_team_name"
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/tv_home_team_score"
         app:layout_constraintHorizontal_weight="0.75"
-        app:layout_constraintStart_toEndOf="@id/tv_competition_year"
+        app:layout_constraintStart_toEndOf="@id/tv_fixture_date"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Young Boys" />
 
@@ -31,11 +32,13 @@
         android:id="@+id/tv_home_team_score"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_half_vertical_margin"
         android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_team_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="0.05"
         app:layout_constraintStart_toEndOf="@id/tv_home_team_name"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home_team_name"
         tools:text="1" />
 
     <TextView
@@ -44,20 +47,22 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/tv_away_team_score"
         app:layout_constraintHorizontal_weight="0.70"
-        app:layout_constraintStart_toEndOf="@id/tv_competition_year"
+        app:layout_constraintStart_toEndOf="@id/tv_fixture_date"
         app:layout_constraintTop_toBottomOf="@id/tv_home_team_name"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Villareal" />
 
     <TextView
         android:id="@+id/tv_away_team_score"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_half_vertical_margin"
         android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/tv_away_team_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="0.05"
         app:layout_constraintStart_toEndOf="@id/tv_away_team_name"
         app:layout_constraintTop_toTopOf="@id/tv_away_team_name"
         tools:text="1" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
