@@ -22,4 +22,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SL Benfica" />
 
+    <TextView
+        android:id="@+id/tv_goals_scored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toEndOf="@id/tv_team_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="30" />
+
+    <TextView
+        android:id="@+id/tv_goals_conceded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toEndOf="@id/tv_goals_scored"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/tv_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintStart_toEndOf="@id/tv_goals_conceded"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="60" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

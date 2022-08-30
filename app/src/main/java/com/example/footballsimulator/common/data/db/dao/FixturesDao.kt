@@ -21,4 +21,10 @@ interface FixturesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateFixtures(fixtures: List<DbFixture>)
+
+    @Query("SELECT * FROM fixtures_table WHERE homeTeamId == :teamId OR awayTeamId == :teamId")
+    suspend fun fetchTeamFixtures(teamId: String): List<DbFixture>
+
+    @Query("SELECT * FROM fixtures_table WHERE homeTeamId == :teamId OR awayTeamId == :teamId")
+    suspend fun fetchTeamFixturesTest(teamId: String): List<DbFixture>
 }

@@ -27,7 +27,7 @@ class StandingsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentTeamStandingsBinding.inflate(inflater, container, false)
         return binding.root
@@ -48,7 +48,7 @@ class StandingsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 standingsViewModel.uiState.collect { uiState ->
-                    standingsListAdapter.submitList(uiState.teamStandings)
+                    standingsListAdapter.convertHeaderAndSubmit(uiState.teamStandings)
                 }
             }
         }
