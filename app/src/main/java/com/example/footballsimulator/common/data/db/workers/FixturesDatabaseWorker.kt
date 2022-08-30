@@ -1,4 +1,4 @@
-package com.example.footballsimulator.common.data.db
+package com.example.footballsimulator.common.data.db.workers
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker

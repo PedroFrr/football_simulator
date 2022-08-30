@@ -12,5 +12,6 @@ data class DbPlayer(
     val offense: Int,
     val defence: Int,
     val agility: Int,
+    val position: String
     // TODO add other attributes if needed
 )
