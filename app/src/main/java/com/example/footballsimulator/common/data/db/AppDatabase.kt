@@ -18,6 +18,7 @@ import com.example.footballsimulator.common.data.db.entities.DbPlayer
 import com.example.footballsimulator.common.data.db.entities.DbTeam
 import com.example.footballsimulator.common.data.db.workers.FixturesDatabaseWorker
 import com.example.footballsimulator.common.data.db.workers.PlayersDatabaseWorker
+import com.example.footballsimulator.common.data.db.workers.TeamsDatabaseWorker
 
 /**
  * SQLite Database for storing the football simulation data.
@@ -53,13 +54,14 @@ abstract class AppDatabase : RoomDatabase() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
 
-                            //TODO add teams
+                            val teamsDatabaseWorker = OneTimeWorkRequestBuilder<TeamsDatabaseWorker>().build()
                             val playersDatabaseWorker = OneTimeWorkRequestBuilder<PlayersDatabaseWorker>().build()
                             val fixturesDatabaseWorker = OneTimeWorkRequestBuilder<FixturesDatabaseWorker>().build()
 
                             //Chained work - executes the workers in the defined order below
                             WorkManager.getInstance(context)
-                                .beginWith(playersDatabaseWorker)
+                                .beginWith(teamsDatabaseWorker)
+                                .then(playersDatabaseWorker)
                                 .then(fixturesDatabaseWorker)
                                 .enqueue()
                         }

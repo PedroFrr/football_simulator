@@ -13,5 +13,8 @@ interface TeamsDao {
     suspend fun fetchTeams(): List<DbTeam>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(fixtures: List<DbTeam>)
+    fun insertAll(teams: List<DbTeam>)
+
+    @Query("SELECT teamId FROM teams_table WHERE name = :teamName LIMIT 1")
+    suspend fun getTeamIdBasedOnName(teamName: String): String
 }
