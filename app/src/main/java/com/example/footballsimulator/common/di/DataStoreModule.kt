@@ -1,4 +1,4 @@
-package com.example.footballsimulator.common.data.datastore.di
+package com.example.footballsimulator.common.di
 
 import android.content.Context
 import com.example.footballsimulator.common.data.datastore.ApplicationPreferences

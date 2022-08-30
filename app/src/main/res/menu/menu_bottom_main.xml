@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/teamStandingList"
+        android:icon="@drawable/ic_football_ball"
+        android:title="@string/title_standings" />
+    <item
+        android:id="@+id/teamList"
+        android:icon="@drawable/ic_player"
+        android:title="@string/title_teams" />
+</menu>

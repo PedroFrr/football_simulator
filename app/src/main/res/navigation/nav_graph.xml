@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/fixturesFragment">
+    app:startDestination="@id/teamStandingList">
 
     <fragment
         android:id="@+id/onboardingFragment"
@@ -23,4 +23,27 @@
             android:id="@+id/navigate_from_fixtures_to_onboarding"
             app:destination="@id/onboardingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/teamList"
+        android:name="com.example.footballsimulator.teams.TeamsFragment"
+        android:label="TeamsFragment"
+        tools:layout="@layout/fragment_teams">
+        <action
+            android:id="@+id/navigate_from_teams_to_players"
+            app:destination="@id/playersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playersFragment"
+        android:name="com.example.footballsimulator.players.PlayersFragment"
+        android:label="PlayersFragment"
+        tools:layout="@layout/fragment_players">
+        <argument
+            android:name="playerTeamId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamStandingList"
+        android:name="com.example.footballsimulator.standings.StandingsFragment"
+        android:label="StandingsFragment"
+        tools:layout="@layout/fragment_team_standings"/>
 </navigation>
