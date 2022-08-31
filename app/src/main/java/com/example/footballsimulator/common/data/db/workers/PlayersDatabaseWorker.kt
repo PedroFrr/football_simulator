@@ -18,8 +18,8 @@ import dagger.assisted.AssistedInject
 class PlayersDatabaseWorker @AssistedInject constructor(
     @Assisted private val appContext: Context,
     @Assisted workerParams: WorkerParameters,
-    private val playersDao: PlayersDao, //TODO replace with repository
-    private val teamsDao: TeamsDao, //TODO replace with repository
+    private val playersDao: PlayersDao, // TODO replace with repository
+    private val teamsDao: TeamsDao, // TODO replace with repository
 ) : CoroutineWorker(appContext, workerParams) {
 
     override suspend fun doWork(): Result {
@@ -30,7 +30,7 @@ class PlayersDatabaseWorker @AssistedInject constructor(
         val type = Types.newParameterizedType(List::class.java, PlayerWorker::class.java)
         val jsonAdapter: JsonAdapter<List<PlayerWorker>> = moshi.adapter(type)
         val players = jsonAdapter.fromJson(jsonString)!!.map {
-            val teamId = teamsDao.getTeamIdBasedOnName(it.team) //TODO review this approach
+            val teamId = teamsDao.getTeamIdBasedOnName(it.team) // TODO review this approach
             DbPlayer(
                 teamId = teamId,
                 name = "${it.firstName} ${it.lastName}",

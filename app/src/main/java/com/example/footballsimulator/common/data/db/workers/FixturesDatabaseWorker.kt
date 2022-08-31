@@ -19,13 +19,12 @@ import java.time.Month
 class FixturesDatabaseWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted workerParams: WorkerParameters,
-    private val fixturesDao: FixturesDao, //TODO replace with repository
-    private val teamsDao: TeamsDao //TODO replace with repository
+    private val fixturesDao: FixturesDao, // TODO replace with repository
+    private val teamsDao: TeamsDao // TODO replace with repository
 ) : CoroutineWorker(appContext, workerParams) {
 
     override suspend fun doWork(): Result {
-        //TODO generate the first batch of fixtures
-
+        // TODO generate the first batch of fixtures
 
         val teams = teamsDao.fetchTeams()
         val randomFourTeams = teams.asSequence()
@@ -82,7 +81,7 @@ class FixturesDatabaseWorker @AssistedInject constructor(
 
         var secondRoundStartDate = tournamentStartDate.plusWeeks(2) // second round starts two weeks after
 
-        //Now for next round, Rotate team Array
+        // Now for next round, Rotate team Array
         val secondRound = fixtures.mapIndexed { index, dbFixture ->
             if (index % 2 == 0) secondRoundStartDate = secondRoundStartDate.plusDays(1)
             DbFixture(

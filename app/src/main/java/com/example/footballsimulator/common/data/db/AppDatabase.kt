@@ -58,7 +58,7 @@ abstract class AppDatabase : RoomDatabase() {
                             val playersDatabaseWorker = OneTimeWorkRequestBuilder<PlayersDatabaseWorker>().build()
                             val fixturesDatabaseWorker = OneTimeWorkRequestBuilder<FixturesDatabaseWorker>().build()
 
-                            //Chained work - executes the workers in the defined order below
+                            // Chained work - executes the workers in the defined order below
                             WorkManager.getInstance(context)
                                 .beginWith(teamsDatabaseWorker)
                                 .then(playersDatabaseWorker)

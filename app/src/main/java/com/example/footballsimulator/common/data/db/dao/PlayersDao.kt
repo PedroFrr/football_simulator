@@ -15,13 +15,13 @@ interface PlayersDao {
 
     @Query(
         "SELECT * FROM players_table" +
-                " WHERE teamId == :teamId"
+            " WHERE teamId == :teamId"
     )
     fun getTeamPlayersStream(teamId: String): Flow<List<DbPlayer>>
 
     @Query(
         "SELECT * FROM players_table" +
-                " WHERE teamId == :teamId"
+            " WHERE teamId == :teamId"
     )
     suspend fun getTeamPlayers(teamId: String): List<DbPlayer>
 

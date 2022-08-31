@@ -13,7 +13,7 @@ import dagger.assisted.AssistedInject
 class TeamsDatabaseWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted workerParams: WorkerParameters,
-    private val teamsDao: TeamsDao //TODO replace with repository
+    private val teamsDao: TeamsDao // TODO replace with repository
 ) : CoroutineWorker(appContext, workerParams) {
 
     override suspend fun doWork(): Result {

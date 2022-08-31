@@ -21,37 +21,39 @@ class StandingsRepositoryImpl @Inject constructor(
                 teamsDao.getTeamById(it.homeTeamId)
             }.distinct()
 
-            emit(teamsInFixtures.map { team ->
-                val teamFixtures = fixturesDao.fetchTeamFixtures(team.teamId)
-                val goalsScored = teamFixtures.sumOf {
-                    if (it.homeTeamId == team.teamId) it.homeTeamScore ?: 0 else it.awayTeamScore ?: 0
-                }
-                val goalsConceded = teamFixtures.sumOf {
-                    if (it.homeTeamId == team.teamId) it.awayTeamScore ?: 0 else it.homeTeamScore ?: 0
-                }
-
-                val points = teamFixtures.sumOf {
-                    val point = when {
-                        (it.homeTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 3
-                        (it.homeTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 0
-                        (it.awayTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 3
-                        (it.awayTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 0
-                        else -> 1
+            emit(
+                teamsInFixtures.map { team ->
+                    val teamFixtures = fixturesDao.fetchTeamFixtures(team.teamId)
+                    val goalsScored = teamFixtures.sumOf {
+                        if (it.homeTeamId == team.teamId) it.homeTeamScore ?: 0 else it.awayTeamScore ?: 0
+                    }
+                    val goalsConceded = teamFixtures.sumOf {
+                        if (it.homeTeamId == team.teamId) it.awayTeamScore ?: 0 else it.homeTeamScore ?: 0
                     }
 
-                    point
-                }
+                    val points = teamFixtures.sumOf {
+                        val point = when {
+                            (it.homeTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 3
+                            (it.homeTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 0
+                            (it.awayTeamId == team.teamId) && ((it.awayTeamScore ?: 0) > (it.homeTeamScore ?: 0)) -> 3
+                            (it.awayTeamId == team.teamId) && ((it.homeTeamScore ?: 0) > (it.awayTeamScore ?: 0)) -> 0
+                            else -> 1
+                        }
 
-                TeamStanding(
-                    goalsScored = goalsScored,
-                    goalsConceded = goalsConceded,
-                    team = Team(
-                        teamId = team.teamId,
-                        name = team.name,
-                    ),
-                    points = points
-                )
-            }.sortedWith(compareBy({ -it.points }, { -it.goalsScored.minus(it.goalsConceded) }, { -it.goalsScored }, { -it.goalsConceded })))
+                        point
+                    }
+
+                    TeamStanding(
+                        goalsScored = goalsScored,
+                        goalsConceded = goalsConceded,
+                        team = Team(
+                            teamId = team.teamId,
+                            name = team.name,
+                        ),
+                        points = points
+                    )
+                }.sortedWith(compareBy({ -it.points }, { -it.goalsScored.minus(it.goalsConceded) }, { -it.goalsScored }, { -it.goalsConceded }))
+            )
         }
     }
 }

@@ -97,4 +97,3 @@ private class FixtureListCallback : DiffUtil.ItemCallback<TeamStandingDataItem>(
         return oldItem == newItem
     }
 }
-
