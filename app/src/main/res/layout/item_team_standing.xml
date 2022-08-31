@@ -3,44 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_half_vertical_margin">
 
     <TextView
-        android:id="@+id/tv_team_position"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="1" />
-
-    <TextView
-        android:id="@+id/tv_team_name"
+        android:id="@+id/tv_position"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintEnd_toStartOf="@id/tv_goals"
-        app:layout_constraintStart_toEndOf="@id/tv_team_position"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tv_team"
+        app:layout_constraintHorizontal_weight="0.1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="SL Benfica" />
+        tools:text="1." />
+
+    <TextView
+        android:id="@+id/tv_team"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/tv_goals"
+        app:layout_constraintHorizontal_weight="0.4"
+        app:layout_constraintStart_toEndOf="@id/tv_position"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Liverpool" />
 
     <TextView
         android:id="@+id/tv_goals"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:paddingHorizontal="8dp"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@id/tv_points"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toEndOf="@id/tv_team"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="30:10" />
+        tools:text="0:0" />
 
     <TextView
         android:id="@+id/tv_points"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:paddingHorizontal="8dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toEndOf="@id/tv_goals"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="60" />
-
+        tools:text="0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

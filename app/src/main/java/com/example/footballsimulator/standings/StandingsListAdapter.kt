@@ -62,8 +62,8 @@ class StandingsListAdapter : ListAdapter<TeamStandingDataItem, RecyclerView.View
         @SuppressLint("SetTextI18n")
         fun bind(teamStanding: TeamStanding) {
             binding.apply {
-                tvTeamPosition.text = adapterPosition.toString()
-                tvTeamName.text = teamStanding.team.name
+                tvPosition.text = adapterPosition.toString()
+                tvTeam.text = teamStanding.team.name
                 tvGoals.text = "${teamStanding.goalsScored} : ${teamStanding.goalsConceded}"
                 tvPoints.text = teamStanding.points.toString()
             }
