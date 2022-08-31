@@ -1,4 +1,4 @@
-##Architecture
+## Architecture
 
 - MVVM following [Android architecture](https://developer.android.com/topic/architecture)
 
@@ -11,14 +11,14 @@
 - [Ktlint gradle](https://github.com/JLLeitschuh/ktlint-gradle)
 - [WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)
 
-##Application flow
+## Application flow
 
 1. Prepopulate database with teams
 2. Prepopulate database with players (from json file inside the application)
 2. Prepopulate database with generated fixtures, based on the teams (double round robin with home
    and away fixture)
 
-##Generate results
+## Generate results
 To generate the result for each fixture:
 
 1. Attack strength -> Number of goals scored by homeTeam last season divided by the number of
@@ -33,14 +33,15 @@ To generate the result for each fixture:
 
 You can try the APK in [Football Sim APK](sampleapk/app-debug.apk)
 
-##Screenshots
+## Screenshots
 
 <p align="center">
+<img src="/appscreenshot/onboarding.png" width="300" height="500"/>
 <img src="/appscreenshot/fixtures.png" width="300" height="500"/>
 <img src="/appscreenshot/team_standings.png" width="300" height="500"/>
 </p>
 
-##Limitations
+## Limitations
 
 - The mutual results were not taken into account for the teamStandings
 - The ratings of each team could be improved and taken into account for the results of each
