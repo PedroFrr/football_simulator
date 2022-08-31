@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">FootballSimulator</string>
-    <string name="onboarding_first_screen_information">mock text</string>
-    <string name="onboarding_second_screen_information">treter</string>
+    <string name="onboarding_first_screen_information">Welcome to Football simulation application \n A set of teams and their respective players will be automatically added to the application</string>
+    <string name="onboarding_second_screen_information">Based on the teams a random set of fixtures will be generated with home and away matches</string>
+    <string name="onboarding_third_screen_information">Finally, you can simulate the results for each of the fixtures</string>
     <string name="done">Done</string>
     <string name="title_teams">Teams</string>
     <string name="title_standings">Standings</string>
     <string name="title_fixtures">Fixtures</string>
     <string name="round_number">Round %1$d</string>
     <string name="simulate_fixtures">Simulate fixtures</string>
+    <string name="next">next</string>
 </resources>

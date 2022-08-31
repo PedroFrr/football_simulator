@@ -12,10 +12,10 @@ import com.example.footballsimulator.onboarding.viewpager.screens.OnboardingScre
 class OnboardingViewPagerAdapter(
     fm: FragmentManager,
     lifecycle: Lifecycle,
-    private val onboardingScreenStringResourceList: List<Int>
+    private val onboardingScreenStringResourceList: List<Int>,
 ) : FragmentStateAdapter(fm, lifecycle) {
 
     override fun getItemCount() = onboardingScreenStringResourceList.count()
 
-    override fun createFragment(position: Int) = OnboardingScreenFragment.newInstance(onboardingScreenStringResourceList[position])
+    override fun createFragment(position: Int) = OnboardingScreenFragment.newInstance(onboardingScreenStringResourceList[position], position == onboardingScreenStringResourceList.size - 1)
 }

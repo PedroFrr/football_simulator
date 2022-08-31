@@ -5,19 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.footballsimulator.R
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.footballsimulator.databinding.FragmentOnboardingBinding
 import com.example.footballsimulator.onboarding.viewpager.OnboardingViewPagerAdapter
+import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.launch
 
 class OnboardingFragment : Fragment() {
 
     private var _binding: FragmentOnboardingBinding? = null
     private val binding get() = _binding!!
 
+    private val onboardingScreenViewModel by activityViewModels<OnboardingViewModel>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
         return binding.root
@@ -26,26 +33,31 @@ class OnboardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupUi()
+        setupObservables()
     }
 
-    private fun setupUi() {
-        setupViewPager()
+    private fun setupObservables() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                onboardingScreenViewModel.uiState.collect { uiState ->
+                    setupViewPager(uiState.onboardingScreenInformation)
+                }
+            }
+        }
     }
 
-    private fun setupViewPager() {
-        val onboardingScreenStringResourceList = listOf(
-            R.string.onboarding_first_screen_information,
-            R.string.onboarding_second_screen_information
-        )
-
+    private fun setupViewPager(screenInformation: List<Int>) {
         val viewPagerAdapter = OnboardingViewPagerAdapter(
             requireActivity().supportFragmentManager,
             lifecycle,
-            onboardingScreenStringResourceList
+            screenInformation
         )
 
         binding.viewpagerOnboarding.adapter = viewPagerAdapter
+
+        TabLayoutMediator(binding.tabLayout, binding.viewpagerOnboarding) { tab, position ->
+            //Some implementation
+        }.attach()
     }
 
     override fun onDestroyView() {
