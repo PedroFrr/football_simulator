@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.footballsimulator.common.data.db.entities.DbFixture
+import com.example.footballsimulator.common.data.db.entities.DbTeamStanding
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -25,6 +26,39 @@ interface FixturesDao {
     @Query("SELECT * FROM fixtures_table WHERE homeTeamId == :teamId OR awayTeamId == :teamId")
     suspend fun fetchTeamFixtures(teamId: String): List<DbFixture>
 
-    @Query("SELECT * FROM fixtures_table WHERE homeTeamId == :teamId OR awayTeamId == :teamId")
-    suspend fun fetchTeamFixturesTest(teamId: String): List<DbFixture>
+    @Query("SELECT" +
+            "      homeTeam.name as Club," +
+            "      (h_win + a_win + h_draw + a_draw + h_loss + a_loss) as MP," +
+            "      (h_win + a_win) as W," +
+            "      (h_draw + a_draw) as D," +
+            "      (h_loss + a_loss) as L," +
+            "      (h_goals_for+a_goals_for) as GF," +
+            "      (h_goals_agst+a_goals_agst) as GA," +
+            "      (h_goals_for+a_goals_for-h_goals_agst-a_goals_agst) as GD," +
+            "      ((h_win + a_win)*3+(h_draw + a_draw)) as Pts" +
+            "      FROM" +
+            "(SELECT name," +
+            "       SUM(CASE WHEN homeTeamScore > awayTeamScore THEN 1 ELSE 0 END) as h_win," +
+            "       SUM(CASE WHEN homeTeamScore = awayTeamScore THEN 1 ELSE 0 END) as h_draw," +
+            "       SUM(CASE WHEN homeTeamScore < awayTeamScore THEN 1 ELSE 0 END) as h_loss," +
+            "       SUM(homeTeamScore) as h_goals_for," +
+            "       SUM(awayTeamScore) as h_goals_agst" +
+            "       FROM fixtures_table" +
+            "       JOIN teams_table as homeTeam ON homeTeam.teamId == fixtures_table.homeTeamId" +
+            "              GROUP BY homeTeamId" +
+            "              ORDER BY homeTeamId) as homeTeam" +
+            " JOIN" +
+            " (SELECT name," +
+            "          SUM(CASE WHEN homeTeamScore > awayTeamScore THEN 1 ELSE 0 END) as a_win," +
+            "          SUM(CASE WHEN homeTeamScore = awayTeamScore THEN 1 ELSE 0 END) as a_draw," +
+            "          SUM(CASE WHEN homeTeamScore < awayTeamScore THEN 1 ELSE 0 END) as a_loss," +
+            "          SUM(homeTeamScore) as a_goals_for," +
+            "          SUM(awayTeamScore) as a_goals_agst" +
+            "          FROM fixtures_table" +
+            "          JOIN teams_table as awayteam ON awayteam.teamId == fixtures_table.awayTeamId" +
+            "                 GROUP BY awayTeamId" +
+            "                 ORDER BY awayTeamId) as awayTeam" +
+            "                 " +
+            "ON   (homeTeam.name == awayTeam.name) ORDER BY pts desc")
+    suspend fun fetchTeamStandings(): List<DbTeamStanding>
 }

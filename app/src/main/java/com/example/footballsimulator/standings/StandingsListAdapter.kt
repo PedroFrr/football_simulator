@@ -63,7 +63,7 @@ class StandingsListAdapter : ListAdapter<TeamStandingDataItem, RecyclerView.View
         fun bind(teamStanding: TeamStanding) {
             binding.apply {
                 tvPosition.text = adapterPosition.toString()
-                tvTeam.text = teamStanding.team.name
+                tvTeam.text = teamStanding.teamName
                 tvGoals.text = "${teamStanding.goalsScored} : ${teamStanding.goalsConceded}"
                 tvPoints.text = teamStanding.points.toString()
             }

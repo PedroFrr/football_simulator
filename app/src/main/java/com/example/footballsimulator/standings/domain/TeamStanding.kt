@@ -1,10 +1,13 @@
 package com.example.footballsimulator.standings.domain
 
-import com.example.footballsimulator.teams.domain.Team
-
 data class TeamStanding(
+    val teamName: String,
+    val matchesPlayed: Int,
+    val wins: Int,
+    val draws: Int,
+    val losses: Int,
     val goalsScored: Int,
     val goalsConceded: Int,
+    val goalDifference: Int,
     val points: Int,
-    val team: Team,
 )
