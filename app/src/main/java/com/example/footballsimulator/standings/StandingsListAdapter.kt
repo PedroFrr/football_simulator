@@ -66,10 +66,10 @@ class StandingsListAdapter : ListAdapter<TeamStandingDataItem, RecyclerView.View
         fun bind(teamStanding: TeamStanding) {
             val context = binding.root.context
             binding.apply {
-                //if the team advances to the next stage, set different background (this ideally shouldn't use adapterPosition and the position should be returned from the db instead)
+                // if the team advances to the next stage, set different background (this ideally shouldn't use adapterPosition and the position should be returned from the db instead)
                 if (adapterPosition == 1 || adapterPosition == 2) {
                     tvPosition.setBackgroundResource(R.color.colorPrimaryDark)
-                    tvPosition.setTextColor(ContextCompat.getColor(context, R.color.white));
+                    tvPosition.setTextColor(ContextCompat.getColor(context, R.color.white))
                 }
                 tvPosition.text = adapterPosition.toString()
                 tvTeam.text = teamStanding.teamName

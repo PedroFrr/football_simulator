@@ -14,6 +14,9 @@ import com.squareup.moshi.Types
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 
+/**
+ * Prepopulates the database with the players from [players.json]
+ */
 @HiltWorker
 class PlayersDatabaseWorker @AssistedInject constructor(
     @Assisted private val appContext: Context,

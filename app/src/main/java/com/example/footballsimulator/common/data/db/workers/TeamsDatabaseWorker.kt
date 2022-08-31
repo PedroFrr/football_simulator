@@ -9,6 +9,10 @@ import com.example.footballsimulator.common.data.db.entities.DbTeam
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 
+/**
+ * Prepopulates the database with teams information.
+ * Ideally this should come from some API
+ */
 @HiltWorker
 class TeamsDatabaseWorker @AssistedInject constructor(
     @Assisted appContext: Context,

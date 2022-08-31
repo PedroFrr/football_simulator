@@ -3,6 +3,9 @@ package com.example.footballsimulator.common.data.db.workers
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
+/**
+ * The structure of the [players.json]
+ */
 @JsonClass(generateAdapter = true)
 data class PlayerWorker(
     @Json(name = "identifier") val identifier: Long,

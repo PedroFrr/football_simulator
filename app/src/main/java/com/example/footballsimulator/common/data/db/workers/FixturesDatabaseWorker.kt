@@ -15,6 +15,9 @@ import dagger.assisted.AssistedInject
 import java.time.LocalDate
 import java.time.Month
 
+/**
+ * Generates a random number of fixtures for four teams in a round robin way for both home and away matches
+ */
 @HiltWorker
 class FixturesDatabaseWorker @AssistedInject constructor(
     @Assisted appContext: Context,

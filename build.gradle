@@ -15,8 +15,6 @@ buildscript {
         hiltVersion = '2.43.2'
         hiltViewModelVersion = '1.0.0-alpha03'
         moshiVersion = "1.9.2"
-        retrofitVersion = '2.9.0'
-        okhttpLoggingVersion = '4.10.0'
         workVersion = '2.5.0'
         moshiRetrofitVersion = '2.9.0'
         navVersion = '2.5.1'
