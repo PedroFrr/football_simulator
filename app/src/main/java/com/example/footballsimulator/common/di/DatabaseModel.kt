@@ -2,7 +2,6 @@ package com.example.footballsimulator.common.di
 
 import android.content.Context
 import com.example.footballsimulator.common.data.db.AppDatabase
-import com.example.footballsimulator.common.data.db.dao.CompetitionsDao
 import com.example.footballsimulator.common.data.db.dao.FixturesDao
 import com.example.footballsimulator.common.data.db.dao.PlayersDao
 import com.example.footballsimulator.common.data.db.dao.TeamsDao
@@ -31,11 +30,6 @@ class DatabaseModel {
     @Provides
     fun provideTeamsDao(appDatabase: AppDatabase): TeamsDao {
         return appDatabase.teamsDao()
-    }
-
-    @Provides
-    fun provideCompetitionsDao(appDatabase: AppDatabase): CompetitionsDao {
-        return appDatabase.competitionsDao()
     }
 
     @Provides

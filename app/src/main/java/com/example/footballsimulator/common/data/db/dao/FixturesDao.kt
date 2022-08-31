@@ -71,7 +71,7 @@ interface FixturesDao {
             "                 GROUP BY awayTeamId" +
             "                 ORDER BY awayTeamId) as awayTeam" +
             "                 " +
-            "ON   (homeTeam.name == awayTeam.name) ORDER BY pts desc"
+            "ON   (homeTeam.name == awayTeam.name) ORDER BY pts desc, GD desc, GF desc, GA desc"
     )
     suspend fun fetchTeamStandings(): List<DbTeamStanding>
 }

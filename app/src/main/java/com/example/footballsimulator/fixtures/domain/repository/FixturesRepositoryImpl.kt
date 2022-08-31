@@ -38,6 +38,9 @@ class FixturesRepositoryImpl @Inject constructor(
         }
     }
 
+    /*
+    Calculates the result of each saved fixture
+     */
     override suspend fun simulateMatches() {
         val fixtures = fixturesDao.fetchFixtures()
         val updatedFixtures = fixtures.map {

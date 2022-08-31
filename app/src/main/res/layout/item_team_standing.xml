@@ -11,8 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginHorizontal="8dp"
         app:layout_constraintEnd_toStartOf="@id/tv_team"
-        app:layout_constraintHorizontal_weight="0.1"
+        app:layout_constraintHorizontal_weight="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1." />
@@ -22,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/tv_goals"
-        app:layout_constraintHorizontal_weight="0.4"
+        app:layout_constraintHorizontal_weight="0.45"
         app:layout_constraintStart_toEndOf="@id/tv_position"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Liverpool" />

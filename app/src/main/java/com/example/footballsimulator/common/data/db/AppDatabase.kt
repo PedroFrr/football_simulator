@@ -7,12 +7,9 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.example.footballsimulator.common.data.db.dao.CompetitionsDao
 import com.example.footballsimulator.common.data.db.dao.FixturesDao
 import com.example.footballsimulator.common.data.db.dao.PlayersDao
 import com.example.footballsimulator.common.data.db.dao.TeamsDao
-import com.example.footballsimulator.common.data.db.entities.DbCompetition
-import com.example.footballsimulator.common.data.db.entities.DbCompetitionPhase
 import com.example.footballsimulator.common.data.db.entities.DbFixture
 import com.example.footballsimulator.common.data.db.entities.DbPlayer
 import com.example.footballsimulator.common.data.db.entities.DbTeam
@@ -26,11 +23,10 @@ import com.example.footballsimulator.common.data.db.workers.TeamsDatabaseWorker
 
 private const val DATABASE_NAME = "football_simulation_db"
 
-@Database(entities = [DbPlayer::class, DbTeam::class, DbCompetition::class, DbCompetitionPhase::class, DbFixture::class], version = 1, exportSchema = false)
+@Database(entities = [DbPlayer::class, DbTeam::class, DbFixture::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun playersDao(): PlayersDao
     abstract fun teamsDao(): TeamsDao
-    abstract fun competitionsDao(): CompetitionsDao
     abstract fun fixturesDao(): FixturesDao
 
     companion object {

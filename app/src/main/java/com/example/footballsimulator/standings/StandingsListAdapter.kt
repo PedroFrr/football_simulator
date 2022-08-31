@@ -3,9 +3,11 @@ package com.example.footballsimulator.standings
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.footballsimulator.R
 import com.example.footballsimulator.databinding.ItemTeamStandingBinding
 import com.example.footballsimulator.databinding.ItemTeamStandingHeaderBinding
 import com.example.footballsimulator.standings.domain.TeamStanding
@@ -62,7 +64,13 @@ class StandingsListAdapter : ListAdapter<TeamStandingDataItem, RecyclerView.View
 
         @SuppressLint("SetTextI18n")
         fun bind(teamStanding: TeamStanding) {
+            val context = binding.root.context
             binding.apply {
+                //if the team advances to the next stage, set different background (this ideally shouldn't use adapterPosition and the position should be returned from the db instead)
+                if (adapterPosition == 1 || adapterPosition == 2) {
+                    tvPosition.setBackgroundResource(R.color.colorPrimaryDark)
+                    tvPosition.setTextColor(ContextCompat.getColor(context, R.color.white));
+                }
                 tvPosition.text = adapterPosition.toString()
                 tvTeam.text = teamStanding.teamName
                 tvGoals.text = "${teamStanding.goalsScored} : ${teamStanding.goalsConceded}"
