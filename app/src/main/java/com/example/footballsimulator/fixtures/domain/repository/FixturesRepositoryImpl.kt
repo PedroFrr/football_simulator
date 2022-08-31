@@ -66,7 +66,7 @@ class FixturesRepositoryImpl @Inject constructor(
             it.copy(homeTeamScore = homeTeamGoals, awayTeamScore = awayTeamGoals)
         }
 
-        fixturesDao.updateFixtures(updatedFixtures)
+        fixturesDao.deleteAllAndInsertFixtures(updatedFixtures)
     }
 
     private fun calculateNumberOfGoals(likelyNumberOfGoals: Double): Int {

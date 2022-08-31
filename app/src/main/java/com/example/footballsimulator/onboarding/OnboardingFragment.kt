@@ -56,7 +56,7 @@ class OnboardingFragment : Fragment() {
         binding.viewpagerOnboarding.adapter = viewPagerAdapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewpagerOnboarding) { tab, position ->
-            //Some implementation
+            // Some implementation
         }.attach()
     }
 

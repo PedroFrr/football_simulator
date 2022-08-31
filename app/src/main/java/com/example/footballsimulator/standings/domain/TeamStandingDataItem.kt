@@ -1,6 +1,5 @@
-package com.example.footballsimulator.standings
+package com.example.footballsimulator.standings.domain
 
-import com.example.footballsimulator.standings.domain.TeamStanding
 import java.util.UUID
 
 sealed class TeamStandingDataItem {

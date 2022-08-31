@@ -21,11 +21,13 @@ class OnboardingViewModel @Inject constructor(
 
     init {
         _uiState.update {
-            it.copy(onboardingScreenInformation = listOf(
-                R.string.onboarding_first_screen_information,
-                R.string.onboarding_second_screen_information,
-                R.string.onboarding_third_screen_information
-            ))
+            it.copy(
+                onboardingScreenInformation = listOf(
+                    R.string.onboarding_first_screen_information,
+                    R.string.onboarding_second_screen_information,
+                    R.string.onboarding_third_screen_information
+                )
+            )
         }
     }
 

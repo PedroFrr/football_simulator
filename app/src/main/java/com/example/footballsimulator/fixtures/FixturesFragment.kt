@@ -12,7 +12,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.WorkRequest
 import com.example.footballsimulator.R
+import com.example.footballsimulator.common.data.db.workers.FixturesDatabaseWorker
 import com.example.footballsimulator.common.util.YYYY_MM_DD
 import com.example.footballsimulator.common.util.formatToDate
 import com.example.footballsimulator.databinding.FragmentFixturesBinding
@@ -34,7 +38,7 @@ class FixturesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentFixturesBinding.inflate(inflater, container, false)
         return binding.root
@@ -52,6 +56,16 @@ class FixturesFragment : Fragment() {
 
         binding.btnSimulateFixtures.setOnClickListener {
             fixturesViewModel.onSimulateScheduleClicked()
+        }
+
+        binding.btnResetFixtures.setOnClickListener {
+            val resetFixturesWorker: WorkRequest =
+                OneTimeWorkRequestBuilder<FixturesDatabaseWorker>()
+                    .build()
+
+            WorkManager
+                .getInstance(requireContext())
+                .enqueue(resetFixturesWorker)
         }
     }
 

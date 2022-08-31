@@ -20,13 +20,13 @@ class FixturesDatabaseWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted workerParams: WorkerParameters,
     private val fixturesDao: FixturesDao, // TODO replace with repository
-    private val teamsDao: TeamsDao // TODO replace with repository
+    private val teamsDao: TeamsDao, // TODO replace with repository
 ) : CoroutineWorker(appContext, workerParams) {
 
     override suspend fun doWork(): Result {
-        // TODO generate the first batch of fixtures
-
         val teams = teamsDao.fetchTeams()
+
+        // takes four random teams to generate a group
         val randomFourTeams = teams.asSequence()
             .shuffled()
             .take(4)
@@ -34,12 +34,12 @@ class FixturesDatabaseWorker @AssistedInject constructor(
 
         val fixtures = generateFixtures(randomFourTeams)
 
-        fixturesDao.insertAll(fixtures)
+        fixturesDao.deleteAllAndInsertFixtures(fixtures)
 
         return Result.success()
     }
 
-    /**
+    /*
      * Berger table algorithm to generate fixtures for all teams home and away
      */
     private fun generateFixtures(teamsList: List<DbTeam>): List<DbFixture> {

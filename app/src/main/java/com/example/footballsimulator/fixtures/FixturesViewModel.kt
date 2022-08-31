@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FixturesViewModel @Inject constructor(
     applicationPreferences: ApplicationPreferences,
-    private val fixturesRepository: FixturesRepository
+    private val fixturesRepository: FixturesRepository,
 ) : ViewModel() {
 
     private val onboardingStatusStream: Flow<Boolean> = applicationPreferences.isOnboarded

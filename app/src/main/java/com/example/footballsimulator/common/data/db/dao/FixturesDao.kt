@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import com.example.footballsimulator.common.data.db.entities.DbFixture
 import com.example.footballsimulator.common.data.db.entities.DbTeamStanding
 import kotlinx.coroutines.flow.Flow
@@ -18,15 +19,26 @@ interface FixturesDao {
     suspend fun fetchFixtures(): List<DbFixture>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(fixtures: List<DbFixture>)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateFixtures(fixtures: List<DbFixture>)
 
-    @Query("SELECT * FROM fixtures_table WHERE homeTeamId == :teamId OR awayTeamId == :teamId")
-    suspend fun fetchTeamFixtures(teamId: String): List<DbFixture>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(fixtures: List<DbFixture>)
 
-    @Query("SELECT" +
+    @Query("DELETE FROM fixtures_table")
+    fun deleteAll()
+
+    /**
+     * First deletes all existing fixtures before inserting the new ones. Unfortunately this doesn't allow historic data
+     * Since it's easier to work with for the assignment
+     */
+    @Transaction
+    suspend fun deleteAllAndInsertFixtures(fixtures: List<DbFixture>) {
+        deleteAll()
+        insertAll(fixtures)
+    }
+
+    @Query(
+        "SELECT" +
             "      homeTeam.name as Club," +
             "      (h_win + a_win + h_draw + a_draw + h_loss + a_loss) as MP," +
             "      (h_win + a_win) as W," +
@@ -59,6 +71,7 @@ interface FixturesDao {
             "                 GROUP BY awayTeamId" +
             "                 ORDER BY awayTeamId) as awayTeam" +
             "                 " +
-            "ON   (homeTeam.name == awayTeam.name) ORDER BY pts desc")
+            "ON   (homeTeam.name == awayTeam.name) ORDER BY pts desc"
+    )
     suspend fun fetchTeamStandings(): List<DbTeamStanding>
 }

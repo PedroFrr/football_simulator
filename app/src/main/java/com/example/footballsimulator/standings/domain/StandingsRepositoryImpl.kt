@@ -15,7 +15,6 @@ class StandingsRepositoryImpl @Inject constructor(
         while (true) {
             val standings = fixturesDao.fetchTeamStandings()
 
-
             val teamStandings = standings.map {
                 TeamStanding(
                     teamName = it.teamName,
