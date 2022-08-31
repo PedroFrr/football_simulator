@@ -31,7 +31,7 @@ To generate the result for each fixture:
 5. Depending on the probability of each, attribute a weight and randomize the number of goals for
    each team
 
-For now you can try the WIP with the apk located in [Football Sim APK](sampleapk/app-debug.apk)
+You can try the APK in [Football Sim APK](sampleapk/app-debug.apk)
 
 ##Screenshots
 

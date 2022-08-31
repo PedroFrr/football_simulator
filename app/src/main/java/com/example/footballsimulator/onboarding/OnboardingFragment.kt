@@ -5,21 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import com.example.footballsimulator.R
 import com.example.footballsimulator.databinding.FragmentOnboardingBinding
 import com.example.footballsimulator.onboarding.viewpager.OnboardingViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.launch
 
 class OnboardingFragment : Fragment() {
 
     private var _binding: FragmentOnboardingBinding? = null
     private val binding get() = _binding!!
-
-    private val onboardingScreenViewModel by activityViewModels<OnboardingViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,24 +27,19 @@ class OnboardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupObservables()
+        setupViewPager()
     }
 
-    private fun setupObservables() {
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                onboardingScreenViewModel.uiState.collect { uiState ->
-                    setupViewPager(uiState.onboardingScreenInformation)
-                }
-            }
-        }
-    }
-
-    private fun setupViewPager(screenInformation: List<Int>) {
+    private fun setupViewPager() {
+        val screensInformation = listOf(
+            R.string.onboarding_first_screen_information,
+            R.string.onboarding_second_screen_information,
+            R.string.onboarding_third_screen_information
+        )
         val viewPagerAdapter = OnboardingViewPagerAdapter(
             requireActivity().supportFragmentManager,
             lifecycle,
-            screenInformation
+            screensInformation
         )
 
         binding.viewpagerOnboarding.adapter = viewPagerAdapter
