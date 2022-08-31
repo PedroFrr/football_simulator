@@ -15,37 +15,31 @@
 
     <TextView
         android:id="@+id/tv_team_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toStartOf="@id/tv_goals"
         app:layout_constraintStart_toEndOf="@id/tv_team_position"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="SL Benfica" />
 
     <TextView
-        android:id="@+id/tv_goals_scored"
+        android:id="@+id/tv_goals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toEndOf="@id/tv_team_name"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_points"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="30" />
-
-    <TextView
-        android:id="@+id/tv_goals_conceded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toEndOf="@id/tv_goals_scored"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="10" />
+        tools:text="30:10" />
 
     <TextView
         android:id="@+id/tv_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        app:layout_constraintStart_toEndOf="@id/tv_goals_conceded"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="60" />
 

@@ -1,5 +1,6 @@
 package com.example.footballsimulator.standings
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -58,12 +59,12 @@ class StandingsListAdapter : ListAdapter<TeamStandingDataItem, RecyclerView.View
             }
         }
 
+        @SuppressLint("SetTextI18n")
         fun bind(teamStanding: TeamStanding) {
             binding.apply {
-                tvTeamPosition.text = teamStanding.standingPosition.toString()
+                tvTeamPosition.text = adapterPosition.toString()
                 tvTeamName.text = teamStanding.team.name
-                tvGoalsScored.text = teamStanding.goalsScored.toString()
-                tvGoalsConceded.text = teamStanding.goalsConceded.toString()
+                tvGoals.text = "${teamStanding.goalsScored} : ${teamStanding.goalsConceded}"
                 tvPoints.text = teamStanding.points.toString()
             }
         }

@@ -43,7 +43,6 @@ class StandingsRepositoryImpl @Inject constructor(
                 }
 
                 TeamStanding(
-                    standingPosition = 0,
                     goalsScored = goalsScored,
                     goalsConceded = goalsConceded,
                     team = Team(
@@ -52,7 +51,7 @@ class StandingsRepositoryImpl @Inject constructor(
                     ),
                     points = points
                 )
-            })
+            }.sortedWith(compareBy({ -it.points }, { -it.goalsScored.minus(it.goalsConceded) }, { -it.goalsScored }, { -it.goalsConceded })))
         }
     }
 }
